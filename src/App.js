@@ -1,18 +1,17 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
+import './App.css'
+import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import Home from './components/Home';
 
-const App = () => {
-  return (
-   <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Dashboard/>}/>
-        <Route path="/support" element={<Support/>}/>
-        <Route path="/plugins" element={<Plugins/>}/>
-        <Route path="/help" element={<Help/>}/>
-      </Routes>
-   </BrowserRouter>
-  );
+function App() {
+  return(
+    <div className='grid-container'>
+      <Header/>
+      <Sidebar/>
+      <Home/>
+    </div>
+    
+  )
 }
 
-export default App;
+export default App
