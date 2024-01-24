@@ -1,16 +1,17 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Sidebar from './components/Sidebar';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <h1>
-          hi
-        </h1>
-      </header>
-    </div>
+   <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/support" element={<Support/>}/>
+        <Route path="/plugins" element={<Plugins/>}/>
+        <Route path="/help" element={<Help/>}/>
+      </Routes>
+   </BrowserRouter>
   );
 }
 
