@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Help = () => {
+const PiChart = () => {
   return (
     <div>
-      <h1>Help Page</h1>
+      pierchart
     </div>
   )
 }
 
-export default Help
+export default PiChart

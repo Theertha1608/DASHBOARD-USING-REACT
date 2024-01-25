@@ -22,19 +22,19 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
 
       <ul className='sidebar-list'>
         <li className='sidebar-list-item'>
-          <a href="">
+          <a href="/">
   
             <img src={CircledMenuImage} alt="Dashboard" className='icon' /> Dashboard
           </a>
         </li>
         <li className='sidebar-list-item'>
-          <a href="">
+          <a href="/">
   
             <img src={SupportImage} alt="Support" className='icon' /> Support
           </a>
         </li>
         <li className='sidebar-list-item'>
-          <a href="">
+          <a href="/">
 
             <img src={PuzzleImage} alt="Plugins" className='icon' /> Plugins
           </a>
