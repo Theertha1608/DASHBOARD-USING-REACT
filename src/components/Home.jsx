@@ -1,10 +1,10 @@
-// src/components/Home.js
 import React from 'react';
 import Linechart from './Linechart';
 import PieChart from './PieChart';
 import Table from './Table';
 import ImageBox from './ImageBox';
 import Profile from './Profile';
+import Pagination from './Pagination'; // Import the Pagination component
 
 const Home = () => {
   const homeContainerStyle = {
@@ -23,7 +23,7 @@ const Home = () => {
   };
 
   const sunEmojiStyle = {
-    marginRight: '0.5em', // Adjust spacing as needed
+    marginRight: '0.5em',
   };
 
   const chartsContainerStyle = {
@@ -46,15 +46,19 @@ const Home = () => {
     alignSelf: 'flex-end',
   };
 
+  const handlePageChange = (newPage) => {
+    // Handle page change logic here (e.g., fetching data for the new page)
+    console.log(`Page changed to ${newPage}`);
+  };
+
   return (
     <div style={homeContainerStyle}>
       <Profile />
       <div style={greetingStyle}>
-      Good Morning!
+        Good Morning!
         <span role="img" aria-label="sun emoji" style={sunEmojiStyle}>
           ☀️
         </span>
-       
       </div>
       <div style={chartsContainerStyle}>
         <div style={chartsLeftStyle}>
@@ -68,6 +72,7 @@ const Home = () => {
       <div style={imageBoxContainerStyle}>
         <ImageBox />
       </div>
+      <Pagination totalPages={10} currentPage={1} onPageChange={handlePageChange} />
     </div>
   );
 };
