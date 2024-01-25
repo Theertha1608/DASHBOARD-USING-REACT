@@ -4,6 +4,7 @@ import Linechart from './Linechart';
 import PieChart from './PieChart';
 import Table from './Table';
 import ImageBox from './ImageBox';
+import Profile from './Profile';
 
 const Home = () => {
   const homeContainerStyle = {
@@ -13,6 +14,16 @@ const Home = () => {
     justifyContent: 'space-between',
     height: '100vh',
     padding: '20px',
+  };
+
+  const greetingStyle = {
+    color: '#000000',
+    fontSize: '1.2em',
+    fontWeight: 'bold',
+  };
+
+  const sunEmojiStyle = {
+    marginRight: '0.5em', // Adjust spacing as needed
   };
 
   const chartsContainerStyle = {
@@ -37,7 +48,14 @@ const Home = () => {
 
   return (
     <div style={homeContainerStyle}>
-      <h1>Home</h1>
+      <Profile />
+      <div style={greetingStyle}>
+      Good Morning!
+        <span role="img" aria-label="sun emoji" style={sunEmojiStyle}>
+          ☀️
+        </span>
+       
+      </div>
       <div style={chartsContainerStyle}>
         <div style={chartsLeftStyle}>
           <Table />
