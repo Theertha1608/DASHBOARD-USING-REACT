@@ -1,11 +1,11 @@
 import React from 'react'
 
-const PiChart = () => {
+const Profile = () => {
   return (
     <div>
-      pierchart
+      
     </div>
   )
 }
 
-export default PiChart
+export default Profile
