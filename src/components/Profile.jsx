@@ -29,6 +29,7 @@ const Profile = () => {
     color: "#000000",
     fontWeight: "bold",
     marginBottom: "5px",
+    
   };
 
   const profileEmailStyle = {

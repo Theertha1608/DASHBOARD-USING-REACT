@@ -24,12 +24,13 @@ const ImageBox = () => {
           <Grid item>
          
             <CardContent>
+            <div style={{ textAlign: 'center' }}>
               <Typography variant="h6" component="div">
                 John Doe
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 CEO
-              </Typography>
+              </Typography></div>
               <Grid container justifyContent="center" spacing={2}>
                 <Grid item>
                   <img
