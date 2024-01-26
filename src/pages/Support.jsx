@@ -1,9 +1,14 @@
 import React from 'react'
 
+import PieChart from "./PieChart";
+
 const Support = () => {
   return (
     <div>
-      <h1>Support Page</h1>
+     <div >
+         
+          <PieChart />
+        </div>
     </div>
   )
 }
