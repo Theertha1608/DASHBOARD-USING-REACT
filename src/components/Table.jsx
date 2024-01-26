@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Box, Card } from "@mui/material";
+import Pagination from "./Pagination";
 
 const Table = () => {
   const [tableData, setTableData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     axios
@@ -13,47 +16,105 @@ const Table = () => {
       })
       .catch((error) => console.error("Error fetching table data:", error));
   }, []);
-
-  const tableStyle = {
-    width: "500px",
-    height: "175px",
-    backgroundColor: "#ffffff",
-    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-    position: "fixed",
-    bottom: "100px",
-    left: "400px",
-    borderRadius: "10px",
-
-    padding: "10px",
+  const handlePageChange = (newPage) => {
+    
+    console.log(`Page changed to ${newPage}`);
+    setCurrentPage(newPage);
   };
-  const headingStyle = {
-    color: "#000000",
-    padding: "5px",
-  };
-
   return (
-    <div style={tableStyle}>
-      <table style={{ width: "100%" }}>
-        <thead>
-          <tr>
-            <th style={headingStyle}>ID</th>
-            <th style={headingStyle}>Name</th>
-            <th style={headingStyle}>Quantity</th>
-            <th style={headingStyle}>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tableData.map((item) => (
-            <tr key={item.id}>
-              <td style={headingStyle}>{item.id}</td>
-              <td style={headingStyle}>{item.name}</td>
-              <td style={headingStyle}>{item.quantity}</td>
-              <td style={headingStyle}>{item.price}</td>
+    <Box sx={{ marginLeft: "62px", width: "700px" }}>
+      <Card sx={{ borderRadius: 3, boxShadow: 6 }}>
+        <table style={{ borderCollapse: "collapse", width: "100%" }}>
+          <thead>
+            <tr>
+              <th
+                style={{
+                  border: "1px solid #dddddd",
+                  textAlign: "left",
+                  padding: "8px",
+                }}
+              >
+                ID
+              </th>
+              <th
+                style={{
+                  border: "1px solid #dddddd",
+                  textAlign: "left",
+                  padding: "8px",
+                }}
+              >
+                Name
+              </th>
+              <th
+                style={{
+                  border: "1px solid #dddddd",
+                  textAlign: "left",
+                  padding: "8px",
+                }}
+              >
+                Quantity
+              </th>
+              <th
+                style={{
+                  border: "1px solid #dddddd",
+                  textAlign: "left",
+                  padding: "8px",
+                }}
+              >
+                Price
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {tableData.map((item) => (
+              <tr key={item.id}>
+                <td
+                  style={{
+                    border: "1px solid #dddddd",
+                    textAlign: "left",
+                    padding: "8px",
+                  }}
+                >
+                  {item.id}
+                </td>
+                <td
+                  style={{
+                    border: "1px solid #dddddd",
+                    textAlign: "left",
+                    padding: "8px",
+                  }}
+                >
+                  {item.name}
+                </td>
+                <td
+                  style={{
+                    border: "1px solid #dddddd",
+                    textAlign: "left",
+                    padding: "8px",
+                  }}
+                >
+                  {item.quantity}
+                </td>
+                <td
+                  style={{
+                    border: "1px solid #dddddd",
+                    textAlign: "left",
+                    padding: "8px",
+                  }}
+                >
+                  {item.price}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Card>
+      <Pagination
+        totalPages={10}
+        currentPage={1}
+        onPageChange={handlePageChange}
+      />
+    </Box>
   );
 };
 

@@ -7,6 +7,7 @@ import SupportImage from "../Assets/Support.png";
 import BriefcaseImage from "../Assets/Briefcase.png";
 import StatBoardImage from "../Assets/StatBoard.png";
 import LogoutIcon from "../Assets/Shutdown.png";
+
 function Sidebar({ openSidebarToggle, OpenSidebar }) {
   const location = useLocation();
 
@@ -17,8 +18,8 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
   };
 
   const ulStyle = {
-    marginLeft: "50px", // Adjust the padding as needed
-    marginTop: "76px", // Adjust the marginTop value as needed
+    marginLeft: "50px", 
+    marginTop: "76px", 
   };
 
   const logoutButtonStyle = {
@@ -40,7 +41,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
   const activeLinkStyle = {
     color: "black",
     backgroundColor: "white",
-    textDecoration: "none", // Remove underline for active link
+    textDecoration: "none",
   };
 
   const sidebarItemStyle = {
@@ -50,12 +51,12 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
     marginBottom: "8px",
     color: "white",
     marginBottom: "36px",
-    transition: "background-color 0.3s", // Add transition for smooth hover effect
+    transition: "background-color 0.3s", 
   };
 
   const hoverStyle = {
-    backgroundColor: "white", // Change the background color on hover
-    // color: "red",
+    backgroundColor: "white", 
+    
   };
 
   return (
@@ -89,7 +90,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           style={{
             ...sidebarItemStyle,
             ...(location.pathname === "/" && activeLinkStyle),
-            ...(location.pathname === "/" && hoverStyle), // Apply hover style for the active item
+            ...(location.pathname === "/" && hoverStyle), 
           }}
         >
           <a
@@ -107,7 +108,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           style={{
             ...sidebarItemStyle,
             ...(location.pathname === "/support" && activeLinkStyle),
-            ...(location.pathname === "/support" && hoverStyle), // Apply hover style for the active item
+            ...(location.pathname === "/support" && hoverStyle), 
           }}
         >
           <a
@@ -128,7 +129,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           style={{
             ...sidebarItemStyle,
             ...(location.pathname === "/plugins" && activeLinkStyle),
-            ...(location.pathname === "/plugins" && hoverStyle), // Apply hover style for the active item
+            ...(location.pathname === "/plugins" && hoverStyle), 
           }}
         >
           <a
@@ -149,7 +150,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           style={{
             ...sidebarItemStyle,
             ...(location.pathname === "/help" && activeLinkStyle),
-            ...(location.pathname === "/help" && hoverStyle), // Apply hover style for the active item
+            ...(location.pathname === "/help" && hoverStyle), 
           }}
         >
           <a
